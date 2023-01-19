@@ -110,13 +110,90 @@ img {
   object-fit: cover;
 }
 
+.wrapper {
+  max-width: 1366px;
+  width: 90%;
+  margin: 0 auto;
+}
 
 /* Global styling End here */
 
 /* ==========================================================================
-1.LOGIN PAGE STYLING START HERE
+1.HEADER STYLING START HERE
 ========================================================================== */
+header {
+  padding: 5px 0;
+  background-color: #000;
+  box-shadow: 0px 7px 24px -3px rgba(0,0,0,0.50);
+  -webkit-box-shadow: 0px 7px 24px -3px rgba(0,0,0,0.50);
+  -moz-box-shadow: 0px 7px 24px -3px rgba(0,0,0,0.50);
+}
+
+header .wrapper {
+  display: flex;
+}
+
+h1 {
+  flex-basis: 15%;
+  max-height: 80px;
+}
+
+nav {
+  flex-basis: 70%;
+  margin: auto;
+}
+
+nav .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar-list a {
+  color: #80b2c0;
+}
+
+/*************  Hambuger Menu start Here  *************/
+
+.hamburger {
+  display: block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin: auto;
+}
+
+.lines {
+  display: block;
+  text-indent: -9999px;
+  width: 100%;
+  height: 3px;
+  margin-bottom: 7px;
+  border-radius: 25px;
+  background-color: #80b2c0;
+}
+
+.hamburger.active .line-1 {
+  transform: rotate(-220deg) translateX(10px) translateY(-7px);
+  transition: all .5s ease-in-out;
+  margin: 0;
+  width: 33px;
+}
+
+.hamburger.active .line-3 {
+  transform: rotate(220deg) translateX(-1px) translateY(-7px);
+  transition: all .5s ease-in-out;
+  margin: 0;
+  width: 33px;
+}
+
+.hamburger.active .line-2 {
+  opacity: 0;
+  margin: 0;
+}
+/*************  Hambuger Menu Ens Here  *************/
+
 
 /* ==========================================================================
- 1. LOGIN PAGE STYLING END HERE
+ 1.HEADER STYLING END HERE
 ========================================================================== */
