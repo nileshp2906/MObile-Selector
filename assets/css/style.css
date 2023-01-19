@@ -156,33 +156,36 @@ nav .navbar {
 /*************  Hambuger Menu start Here  *************/
 
 .hamburger {
-  display: block;
+  display: none;
   width: 30px;
   height: 30px;
   cursor: pointer;
   margin: auto;
+  transition: all .6s ease-in-out;
 }
 
 .lines {
   display: block;
   text-indent: -9999px;
+  overflow: hidden;
   width: 100%;
   height: 3px;
   margin-bottom: 7px;
   border-radius: 25px;
   background-color: #80b2c0;
+  transition: all .6s ease-in-out;
 }
 
 .hamburger.active .line-1 {
   transform: rotate(-220deg) translateX(10px) translateY(-7px);
-  transition: all .5s ease-in-out;
+  transition: all .6s ease-in-out;
   margin: 0;
   width: 33px;
 }
 
 .hamburger.active .line-3 {
   transform: rotate(220deg) translateX(-1px) translateY(-7px);
-  transition: all .5s ease-in-out;
+  transition: all .6s ease-in-out;
   margin: 0;
   width: 33px;
 }
@@ -197,3 +200,51 @@ nav .navbar {
 /* ==========================================================================
  1.HEADER STYLING END HERE
 ========================================================================== */
+
+@media screen and (max-width:995px) {
+  header .wrapper {
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.active {
+    display: block;
+    position: absolute;
+    background-color:#fff;
+    top: 0;
+    left: 80%;
+    width: 60%;
+    height: 100vh;
+    animation: menu-move .5s forwards;
+    box-shadow: -11px 5px 19px -10px rgba(0,0,0,0.62);
+    -webkit-box-shadow: -11px 5px 19px -10px rgba(0,0,0,0.62);
+    -moz-box-shadow: -11px 5px 19px -10px rgba(0,0,0,0.62);
+  }
+  
+  @keyframes menu-move {
+    0% { left: 80%; }
+
+    100% { left: 45.5%; }
+  }
+
+  nav.active .navbar {
+    flex-direction: column;
+  }
+
+  nav.active .navbar-list {
+    margin: 25px 0;
+  }
+
+}
